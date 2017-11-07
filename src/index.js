@@ -1,4 +1,5 @@
 const route = "https://randomuser.me/api/";
+let store = {users: []};
 
 function getStuff() {
   let user = fetch(`${route}`)
@@ -14,6 +15,7 @@ class User {
     this.name = results.name;
     this.email = results.email;
     this.phone = results.phone;
+    store.users.push(this);
   }
 };
 
